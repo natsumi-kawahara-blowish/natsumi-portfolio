@@ -1,0 +1,109 @@
+import { ExperienceItem, Profile, Skill } from './types';
+
+export const profile: Profile = {
+  name: "大村 なつみ",
+  kana: "Omura Natsumi",
+  role: "Full Stack Engineer",
+  email: "m.f.natsu.k75@gmail.com",
+  location: "神奈川県 横浜市",
+  summary: "営業職で培ったコミュニケーション力と、バックエンド(Laravel)の知見を活かしたフロントエンド(React/TypeScript)開発が得意です。「サーバーサイドの構造を熟知したフロントエンドエンジニア」として、手戻りの少ない効率的な開発と、チームを円滑にする立ち回りを提供します。",
+  strengths: [
+    {
+      title: "React × TypeScript による堅牢な実装",
+      description: "Tailwind CSSやJotaiなどのモダンスダックを選定し、保守性が高く変更に強いUIを構築します。型安全性を重視し、バグの少ないコードを書くことを心がけています。"
+    },
+    {
+      title: "バックエンド視点でのフロントエンド開発",
+      description: "Laravel/MySQLの知見があるため、APIのデータ構造やDB設計を考慮したフロントエンド実装が可能です。バックエンドエンジニアとの連携も非常にスムーズです。"
+    },
+    {
+      title: "営業経験を活かしたチーム貢献",
+      description: "「何を作るか」だけでなく「なぜ作るか」を意識。認識のズレを防ぐコミュニケーションやドキュメント作成で、チーム開発を円滑に進めます。"
+    }
+  ]
+};
+
+export const skills: Skill[] = [
+  // Frontend
+  { name: "React / Next.js", level: 5, category: "frontend" },
+  { name: "TypeScript / JavaScript", level: 5, category: "frontend" },
+  { name: "HTML5 / CSS3", level: 5, category: "frontend" },
+  { name: "Tailwind CSS / Bootstrap", level: 5, category: "frontend" },
+  { name: "Vue.js", level: 4, category: "frontend" },
+
+  // Backend
+  { name: "Laravel (PHP)", level: 5, category: "backend" },
+  { name: "MySQL / PostgreSQL", level: 4, category: "backend" },
+
+  // Infra & Tools
+  { name: "Docker / AWS", level: 4, category: "infra" },
+  { name: "Git / GitHub", level: 5, category: "tools" },
+  { name: "Cursor / Copilot / ChatGPT", level: 5, category: "tools" },
+  { name: "Jira / Redmine", level: 4, category: "tools" },
+];
+
+export const experiences: ExperienceItem[] = [
+  {
+    id: "9",
+    period: "2025.01 - 現在",
+    role: "フルスタックエンジニア",
+    title: "官公庁向け観光支援システムの追加機能開発",
+    description: "React/TypeScriptとLaravelを用いたフルスタック開発。Jotaiを活用した複雑なタブ切り替え機能や、自然観光資源データの可視化UIを設計から実装まで担当。",
+    techStack: ["React", "TypeScript", "Jotai", "Laravel", "MySQL", "Docker", "Cursor"],
+    points: [
+      "Jotaiを用いたパフォーマンス最適化で、6タブ構成の複雑な画面を実装",
+      "API設計からフロント実装まで一人で完遂し、手戻りを削減",
+      "AIツールを活用し、ボイラープレート生成やテスト作成を効率化"
+    ]
+  },
+  {
+    id: "8",
+    period: "2024.12 - 2025.02",
+    role: "バックエンドエンジニア",
+    title: "eラーニングシステムのAPIリファクタリング",
+    description: "Laravelを用いたAPIの最適化、セキュリティ強化（Policy/Gate）、レガシーコードのリファクタリング。",
+    techStack: ["Laravel", "PHP", "MySQL", "Postman", "Jira"],
+    points: [
+      "レガシーコードをモダンなLaravel仕様へリファクタリング",
+      "フロントエンドと事前に型定義をすり合わせ、連携工数を削減",
+      "Postmanでの網羅的テストによる品質担保"
+    ]
+  },
+  {
+    id: "7",
+    period: "2024.01 - 2024.12",
+    role: "フルスタックエンジニア",
+    title: "受発注・在庫管理システムのリプレイス開発",
+    description: "Vue 3 (Composition API) + Laravel (Clean Architecture) による基幹システム刷新。",
+    techStack: ["Vue.js", "TypeScript", "Pinia", "Laravel", "Tailwind CSS"],
+    points: [
+      "コンサルと開発の間の「翻訳者」として要件定義を主導",
+      "Atomic DesignとTailwind CSSによる効率的なUI構築",
+      "Prettier/ESLintの導入による開発環境の標準化"
+    ]
+  },
+  {
+    id: "6",
+    period: "2024.10 - 2024.12",
+    role: "Webエンジニア（サブリーダー）",
+    title: "SNS型トークアプリケーション開発",
+    description: "Laravelでのフルスクラッチ開発。メンバーへのGit指導やコードレビューも担当。",
+    techStack: ["Laravel", "Bootstrap", "MySQL", "Docker"],
+    points: [
+      "GitFlowの導入とメンバーへのハンズオン指導",
+      "DB設計（多対多のリレーション）とクエリスコープによる検索機能実装"
+    ]
+  },
+  {
+    id: "freelance",
+    period: "2021.07 - 2023.06",
+    role: "Webデザイナー・コーダー",
+    title: "フリーランス Web制作",
+    description: "個人事業主〜中小企業向けのLP・Webサイト制作。デザインからWordPress実装まで一貫対応。",
+    techStack: ["HTML/CSS", "JavaScript", "WordPress", "Figma", "XD"],
+    points: [
+      "2年間で約50件の案件を完遂",
+      "ヒアリングから要件定義、デザイン、実装までワンストップで対応"
+    ]
+  }
+];
