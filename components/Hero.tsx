@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { profile } from '../data';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { scrollToSectionById } from '../utils/scrollToSection';
+import SocialLinks from './common/SocialLinks';
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16">
       
       {/* Background Decor - Soft Watercolor Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -23,11 +24,11 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl shadow-primary/20 animate-float bg-white relative z-10">
+             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl shadow-primary/20 animate-float bg-transparent relative z-10">
                <img 
                  src="/logo.png" 
                  alt="Natsumi Omura Logo" 
-                 className="w-full h-full object-cover"
+                 className="w-full h-full object-cover scale-110"
                />
              </div>
           </motion.div>
@@ -52,7 +53,7 @@ const Hero: React.FC = () => {
           >
             Hello, I'm <br />
             <span className="text-gradient drop-shadow-sm">
-              {profile.kana}
+              Ohmura Natsumi
             </span>
           </motion.h1>
 
@@ -62,8 +63,8 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-muted font-medium mb-10 max-w-2xl leading-relaxed"
           >
-            「伝える力」と「創る力」で、<br className="md:hidden"/>想いをカタチにするエンジニア。<br/>
-            <span className="text-primary font-bold">Laravel & React</span> で、<br className="md:hidden"/>愛されるプロダクトを開発します。
+            ビジネスの解像度を、プロダクトの完成度へ。<br/>
+            営業経験を武器に、顧客の意図を「<span className="text-gradient font-bold">勝てる仕様</span>」へと昇華させます。
           </motion.p>
 
           <motion.div
@@ -73,14 +74,14 @@ const Hero: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
              <button 
-                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToSectionById('experience')}
                 className="px-8 py-3.5 bg-primary text-white font-bold rounded-full shadow-lg shadow-primary/30 hover:bg-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
              >
                View My Work
              </button>
              
              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => scrollToSectionById('contact')}
                 className="px-8 py-3.5 bg-white text-heading font-bold rounded-full border border-soft shadow-sm hover:bg-gray-50 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
              >
                Contact Me
@@ -91,11 +92,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="mt-16 flex gap-6 text-muted"
+            className="mt-16 mb-4"
           >
-            <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:text-primary hover:shadow-md transition-all transform hover:-translate-y-1"><Github size={22} /></a>
-            <a href="#" className="p-2 bg-white rounded-full shadow-sm hover:text-primary hover:shadow-md transition-all transform hover:-translate-y-1"><Linkedin size={22} /></a>
-            <a href={`mailto:${profile.email}`} className="p-2 bg-white rounded-full shadow-sm hover:text-primary hover:shadow-md transition-all transform hover:-translate-y-1"><Mail size={22} /></a>
+            <SocialLinks />
           </motion.div>
         </div>
       </div>

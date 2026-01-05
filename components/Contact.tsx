@@ -12,14 +12,14 @@ const Contact: React.FC = () => {
         
         <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-heading font-heading mb-6">
-              Let's build something <br/>
-              <span className="text-gradient">wonderful</span> together.
+              Let's build the next <span className="text-gradient">impact</span>, together.
             </h2>
             
             <p className="text-muted text-lg mb-12 leading-relaxed">
-              現在、新しいプロジェクトへの参画を希望しております。<br/>
-              私のスキルセットが少しでもお役に立てそうでしたら、<br className="hidden md:block"/>
-              まずはお気軽にご連絡ください。
+              ビジネスの理想を、技術で現実に。<br/>
+              共に価値を創出し、プロダクトを次なるステージへと昇華させる機会を求めています。<br className="hidden md:block"/><br className="hidden md:block"/>
+              私の経験が貴社の力になれると確信しております。<br/>
+              まずはカジュアルにお話しさせていただければ幸いです。
             </p>
 
             <div className="bg-background rounded-3xl p-10 shadow-sm border border-soft/50">

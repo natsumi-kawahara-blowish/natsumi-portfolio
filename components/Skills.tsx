@@ -1,6 +1,7 @@
 import React from 'react';
 import { skills } from '../data';
 import { motion } from 'framer-motion';
+import SectionTitle from './common/SectionTitle';
 
 const SkillBar: React.FC<{ name: string; level: number }> = ({ name, level }) => {
   return (
@@ -37,10 +38,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-24 bg-background relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-3">Technical Skills</h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-secondary to-primary rounded-full"></div>
-        </div>
+        <SectionTitle title="Technical Skills" gradientFrom="secondary" gradientTo="primary" />
 
         <div className="grid md:grid-cols-3 gap-8">
           {Object.entries(categories).map(([key, label], index) => (

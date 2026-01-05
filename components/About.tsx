@@ -2,6 +2,7 @@ import React from 'react';
 import { profile } from '../data';
 import { motion } from 'framer-motion';
 import { Zap, Server, Users } from 'lucide-react';
+import SectionTitle from './common/SectionTitle';
 
 const icons = [Zap, Server, Users];
 
@@ -9,14 +10,11 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-24 relative z-10 bg-white/50 backdrop-blur-sm">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-3">About Me</h2>
-          <div className="h-1 w-16 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-          <p className="text-muted mt-6 text-center max-w-2xl leading-relaxed">
-            営業職の経験と技術力を掛け合わせ、<br/>
-            円滑なチーム開発と高品質な実装の両面から貢献します。
-          </p>
-        </div>
+        <SectionTitle title="About Me" />
+        <p className="text-muted text-center max-w-2xl mx-auto mb-16 leading-relaxed">
+          営業職の経験と技術力を掛け合わせ、<br/>
+          円滑なチーム開発と高品質な実装の両面から貢献します。
+        </p>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div 

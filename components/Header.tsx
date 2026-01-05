@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { navLinks } from '../constants/navigation';
+import { scrollToSection } from '../utils/scrollToSection';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,20 +16,9 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
-  ];
-
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection(href);
   };
 
   return (
@@ -42,11 +33,11 @@ const Header: React.FC = () => {
             className="flex items-center gap-2 cursor-pointer group" 
             onClick={() => handleNavClick('#home')}
           >
-            <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full border border-white shadow-sm group-hover:shadow-md transition-all">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full shadow-sm group-hover:shadow-md transition-all bg-transparent">
               <img 
                 src="/logo.png" 
                 alt="Natsumi Omura Logo" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-110"
               />
             </div>
             <span className="font-heading font-bold text-lg tracking-tight text-heading">
